@@ -1,15 +1,23 @@
 # ADD A RECORD TO THE DATABASE -- REDCAP API
 from config import config
 import requests
+import pandas as pd
 
-'''
-import_record (
-    token: API_TOKEN
-    content: record
-    format: json, csv, xml (default), odm
-    type: flat (output as one record/row), eav (input as one data point per row)
-    overwriteBehavior: normal (ignore empty - default), overwrite (overwrite with empty value)
-    forceAutoNumber: true (new record names auto determined), false (provided record name used -- default)
-    data: data
-)
-'''
+nRecord = pd.read_csv('new-records.csv')
+
+data = {
+    'token': config['API_TOKEN'],
+    'content': 'record',
+    'action': 'import',
+    'format': 'csv',
+    'type': 'flat',
+    'overwriteBehavior': 'normal',
+    'forceAutoNumber': 'true',
+    'data': nRecord,
+    'returnContent': 'nothing',
+    'returnFormat': 'json'
+}
+
+r = requests.post(config['API_URL'], data = data)
+#print('HTTP Status: ' + str(r.status_code))
+print(r.json())

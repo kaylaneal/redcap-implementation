@@ -1,6 +1,7 @@
 # EXPORT METADATA (VARIABLE/FIELD NAMES) -- FROM REDCAP API
 from config import config
 import requests
+import pandas as pd
 
 fields = {
     'token': config['API_TOKEN'],
@@ -11,4 +12,8 @@ fields = {
 
 r = requests.post(config['API_URL'], data = fields)
 #print('HTTP Status: ' + str(r.status_code))
-#print(r.text)
+
+ddict = r.json()
+
+df = pd.json_normalize(ddict)
+df.to_csv('data-dictionary.csv')
