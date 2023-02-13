@@ -1,0 +1,10 @@
+HTTP STATUS CODES:
+
+200 OK
+400 Bad Request
+401 Unauthorized: API token missing/incorrect
+403 Forbidden: No API permissions
+404 Not Found: Invalid API URL
+406 Not Acceptable: Incorrect Format
+500 Internal Server Error
+501 Not Implemented

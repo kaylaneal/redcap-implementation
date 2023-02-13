@@ -1,4 +1,4 @@
-# EXPORT RECORDS FROM REDCAP -- FROM REDCAP API
+# EXPORT RECORDS FROM REDCAP 
 from config import config
 import requests
 import pandas as pd

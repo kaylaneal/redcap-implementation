@@ -1,4 +1,4 @@
-# EXPORT METADATA (VARIABLE/FIELD NAMES) -- FROM REDCAP API
+# EXPORT METADATA (VARIABLE/FIELD NAMES)
 from config import config
 import requests
 import pandas as pd

@@ -1,4 +1,4 @@
-# ADD A RECORD TO THE DATABASE -- REDCAP API
+# ADD A RECORD TO THE DATABASE
 from config import config
 import requests
 import pandas as pd

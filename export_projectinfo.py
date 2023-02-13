@@ -1,4 +1,4 @@
-# RETRIEVE PROJECT INFORMATION -- INCLUDED REDCAP API
+# RETRIEVE PROJECT INFORMATION
 from config import config
 import requests
 import pandas as pd
